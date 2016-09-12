@@ -5,6 +5,5 @@ node_js:
 before_script:
   - npm cache clean -f
   - npm install -g -n
-  - n stable
   - node --version
 script: gulp
