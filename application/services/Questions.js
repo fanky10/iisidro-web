@@ -18,6 +18,20 @@ module.exports.injectServiceTo = (mod) => {
                 });
             };
 
+            this.getOne = (config) => {
+                return $q((resolve, reject) => {
+                    API.get({
+                        url: 'preguntas/' + config.questionId
+                    })
+                    .then((response) => {
+                        resolve(response.data);
+                    })
+                    .catch((error) => {
+                        reject(error);
+                    });
+                });
+            };
+
             this.createInstance = (config) => {
                 let question = config.question;
 
@@ -37,6 +51,28 @@ module.exports.injectServiceTo = (mod) => {
                     });
                 });
             };
+
+            this.updateInstance = (config) => {
+                let question = config.question;
+
+                return $q((resolve, reject) => {
+                    API.put({
+                        url: 'preguntas',
+                        data: {
+                            id: question.id,
+                            nombre: question.statement,
+                            tipo: question.type
+                        }
+                    })
+                    .then((response) => {
+                        resolve(response);
+                    })
+                    .catch((error) => {
+                        reject(error);
+                    });
+                });
+            };
+
 
             this.deleteInstance = (config = {}) => {
                 return $q((resolve, reject) => {

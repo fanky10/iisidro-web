@@ -1,0 +1,31 @@
+<form name="sectionCreateEditCtrl.surveyForm" ng-init="sectionCreateEditCtrl.initialize()" novalidate>
+    <div layout>
+        <md-input-container flex>
+            <label>Nombre de la sección</label>
+            <input name="name" ng-model="sectionCreateEditCtrl.section.name" required>
+            <div ng-messages="surveyCreateEditCtrl.getErrors('name')" ng-show="surveyCreateEditCtrl.showMessages('name')">
+                <div ng-message="required">Debe ingresar un nombre para la sección</div>
+            </div>
+        </md-input-container>
+        <md-input-container>
+            <label>Orden</label>
+            <input name="maxLength" ng-model="sectionCreateEditCtrl.question.maxLength" required min="0" max="14" type="number">
+            <div ng-messages="sectionCreateEditCtrl.getErrors('maxLength')" ng-show="sectionCreateEditCtrl.showMessages('maxLength')">
+                <div ng-message="required">Debe ingresar una orden para la sección</div>
+                <div ng-message="min">El orden debe ser un numero positivo</div>
+                <div ng-message="max">El orden no puede ser mayor a 14</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div>
+        <md-button ng-disabled="sectionCreateEditCtrl.submitting"
+            ng-click="sectionCreateEditCtrl.handleFormSubmit($event)"
+            type="submit">
+            Guardar
+        </md-button>
+        <md-button
+            ui-sref = "base.app.admin.surveys.list">
+            Cancelar
+        </md-button>
+    </div>
+</form>
