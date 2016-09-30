@@ -10,6 +10,8 @@ before_deploy:
 - mv index.html home.html
 - echo "<?php include('home.html'); ?>" > index.php
 deploy:
+# avoids deleting all modified data
+	skip_cleanup: true
   provider: heroku
   app: iisidro-web-dev
   api_key:
