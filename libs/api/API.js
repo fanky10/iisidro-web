@@ -49,6 +49,17 @@ module.exports.injectServiceTo = (mod) => {
                 }));
             };
 
+            this.put = (config) => {
+                return $http(this.addHeaders({
+                    url: path.join(this.config.host, this.config.apiRoot, config.url),
+                    method: 'PUT',
+                    contentType: this.config.contentType,
+                    data: JSON.stringify(config.data),
+                    params: config.params,
+                    dataType: this.config.dataType
+                }));
+            };
+
             this.get = (config) => {
                 return $http(this.addHeaders({
                     url: path.join(this.config.host, this.config.apiRoot, config.url),

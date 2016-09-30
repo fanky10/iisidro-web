@@ -9,10 +9,20 @@
         </md-input-container>
     </div>
     <div>
+        <label>Secciones</label>
+        <table content="surveyCreateEditCtrl.sections"
+        columns="surveyCreateEditCtrl.columns"
+        actions="surveyCreateEditCtrl.actions"></table>
+    </div>
+    <div>
         <md-button ng-disabled="surveyCreateEditCtrl.submitting"
             ng-click="surveyCreateEditCtrl.handleFormSubmit($event)"
             type="submit">
             Guardar
+        </md-button>
+        <md-button
+            ui-sref = "base.app.admin.surveys.list">
+            Cancelar
         </md-button>
     </div>
 </form>

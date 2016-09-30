@@ -19,9 +19,9 @@ module.exports.injectControllerTo = (mod) => {
                     });
             };
 
-            this.editSurvey = (question) => {
+            this.editSurvey = (survey) => {
                 $state.go('base.app.admin.surveys.edit', {
-                    questionId: '123'
+                    surveyId: survey.id
                 });
             };
 
@@ -58,12 +58,10 @@ module.exports.injectControllerTo = (mod) => {
                 }
             ];
             this.actions = [
-                /*
                 {
                     label: 'Editar',
                     onCall: this.editSurvey
                 },
-                */
                 {
                     label: 'Eliminar',
                     onCall: this.deleteSurvey

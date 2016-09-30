@@ -86,7 +86,9 @@ module.exports.injectRouterTo = (mod) => {
                 })
                 .state('base.app.admin.questions.edit', {
                     url: '/edit/:questionId',
-                    templateUrl: 'views/app/admin/questions/question-create-edit-view.html'
+                    templateUrl: 'views/app/admin/questions/question-create-edit-view.html',
+                    controller: 'QuestionCreateEditCtrl',
+                    controllerAs: 'questionCreateEditCtrl'
                 });
 
             // ADMIN QUESTIONS FALLBACKS
@@ -113,7 +115,9 @@ module.exports.injectRouterTo = (mod) => {
                 })
                 .state('base.app.admin.surveys.edit', {
                     url: '/edit/:surveyId',
-                    templateUrl: 'views/app/admin/surveys/survey-create-edit-view.html'
+                    templateUrl: 'views/app/admin/surveys/survey-create-edit-view.html',
+                    controller: 'SurveyCreateEditCtrl',
+                    controllerAs: 'surveyCreateEditCtrl'
                 });
 
             // ADMIN SURVEYS FALLBACKS
