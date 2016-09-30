@@ -1,19 +1,16 @@
-# test push
 language: node_js
 node_js:
-  - "6"
+- '6'
 before_script:
-  - npm cache clean -f
+- npm cache clean -f
 script: npm install
-
-# deployment
 before_deploy:
-  - gulp
-  - cd dist
-  - mv index.html home.html
-  - echo "<?php include('home.html'); ?>" > index.php
+- gulp
+- cd dist
+- mv index.html home.html
+- echo "<?php include('home.html'); ?>" > index.php
 deploy:
   provider: heroku
   app: iisidro-web-dev
   api_key:
-    secure: bYltB3j0T5I8/BldSVT2+TJ4XW+qnARl8fnIfU6ArCtVa6Tu1QMxPCF+5+JkntogZ6RHzhmijVHIOnFDALUMpcen2gXSf6gZ/1FBfTTsiHSAKgY839eDUlbFRMVfD+HnqDyJmElpmjyumABPrGA+3DFwdX+0IxLKYD4MdzXqPFPnuA6Dg8uuaKCuycNKdNUg+SUhzvNKNWSunw/jF1C+VBUvcTE2SMMbV9eDJpEQLqxT9vbGVCZoRn31FkiFk4O+udP+vYpuxCB7rRpPOvUwuGkLNfGXLtdhrCtskOAObxXzca0FQ5e+y/GRjdqTRXq32ObkRYCSZeATK7kfBqY4H7QJVT+PecGbYICvCNsbvLmoaH2NqdoWy3oKVCbk+ADa80rn7ow/MaIEk6y2EVVj5b3Q3RfOdBXmzl5ymC0wOin2tugNifuDow37Cd6dyamIeusNG9pAF6arcZDaN02I7jIF7lXNUP5+LdsKbtiuaEUb7dsv5QnaZX77ou08pdtpgDlT9plPHIp1yB9OvVotlu8iH97NNhL025nDq9FW5VGRZnRki4HP2sJReFlxNq4JlRLEohPwp+rcCjGrbYD7hdlpeJWhisBKqY7/0cVbyS0hNRttGWDbVQ0nVaT1WKSloaxAuSrFVIAvJJCSKCm0VP/HmBRGAW+Q7rolGZAejxg=
+    secure: J2Gst+CdFoIIr37kDU+4wFHVHb5sLKeDc7cLcEeTn3oVBi/7F+8cWao8Vh7E9P+e/8Aw5O9wu/ZRqkPPebRlxgXN61y+T0Mr9u/HTaw3hDQFk00Jk/MdBZmGY7x1Wvr32T3L3Vc+GRXiPcRrtp4iKubEhMj+HSEl9Hfu0UQnSmrCC6OxnY1ERvKtL8C7Sg66+AxdVCd6+T6C3cyQZrbRFP+J5Zrgk17gzM3JTczok8zQ3e6tcJiRVtsEbeRMLpmsviYXHUtIOHbhTKvy+ZV4pkE2vOjnUgmvQ35x1DTQvZtmWQxrBt5CVoWDxXrh/vDb7k8qcHrmhMWhaXTNuSWpu2xjfk0hAnV2of5FpvRS2IQsfPqHh6GxqTvtT+VWXF8OEGTOOXdACbXjntA0ANGaKYZmAob2mmBb/ooY5hoBnaV86SqobjAkItI7xsGGVN9k/G7dIDnqG5IuWAMixDs3VwV2o690UgdOtPgmeculxzALLlD2VgX61dnR8r9Tmo2TN/mDaSlmRzubbRNOwh1BDyC0zPeVhsgPNYVbUZi8H3lebGjWF1CkDBm4WBK27J5QJykGGnlZxPEmVI98b48ed2TTGJNbSA+yM4lHdMEkkZhl6ofBq3BpXftwiHXCdxd02eCN9Ol8D4NrE28wpKMB5hom1r9TJQuP0AMwJfyB6lQ=
