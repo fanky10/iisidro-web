@@ -1,11 +1,12 @@
 language: node_js
 node_js:
 - '6'
-before_script:
+before_install:
 - npm cache clean -f
-script: npm install
+install:
+- npm install
+script: gulp
 before_deploy:
-- gulp
 - cd dist
 - mv index.html home.html
 - echo "<?php include('home.html'); ?>" > index.php
