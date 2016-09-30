@@ -4,6 +4,4 @@ node_js:
   - 0.12
 before_script:
   - npm cache clean -f
-  - npm install -g -n
-  - node --version
-script: gulp
+script: npm install
